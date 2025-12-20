@@ -182,13 +182,20 @@ h1, h2, h3, h4, h5, h6 {
   content: none; /* Removed divider for minimalism */
 }
 .hero-title {
-  font-size: clamp(3rem, 6vw, 5rem); /* Oversized for value hook */
+  font-size: 3.5rem;
   font-weight: 700;
   letter-spacing: -0.03em;
   max-width: 900px;
   margin: 0 auto var(--space-lg) auto;
   color: var(--text-primary);
   line-height: 1.1;
+  /* Better text wrapping for deployment */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  /* Ensure consistent rendering across environments */
+  font-display: swap;
+  text-rendering: optimizeLegibility;
 }
 .hero-title-gradient {
   color: var(--brand); /* Solid indigo—no clip */
@@ -967,7 +974,11 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--space-xl);
   }
   .hero-title {
-    font-size: clamp(2.25rem, 6vw, 3.25rem);
+    font-size: 2.75rem;
+    line-height: 1.2;
+    /* Better mobile text wrapping */
+    word-break: normal;
+    overflow-wrap: break-word;
   }
   .hero-subtitle {
     font-size: 1.125rem;
@@ -1034,7 +1045,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: var(--space-xl) 0;
   }
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    /* Ensure proper wrapping on small screens */
+    word-break: normal;
+    overflow-wrap: break-word;
   }
   .hero-subtitle {
     font-size: 1rem;
@@ -1191,4 +1206,45 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
   color: #CBD5E1;
   margin-bottom: var(--space-xl);
+}
+
+/* Additional responsive fixes for hero title */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .hero-title {
+    font-size: 3rem;
+    line-height: 1.15;
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    max-width: 600px;
+  }
+}
+
+/* Ensure proper text wrapping on all screen sizes */
+.hero-title {
+  text-wrap: balance;
+  -webkit-text-wrap: balance;
+}
+
+/* Fix for GitHub Pages deployment - ensure container doesn't cause text overflow */
+.hero .container {
+  max-width: 1152px;
+  padding: 0 2rem;
+}
+
+@media (max-width: 1200px) {
+  .hero .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .container {
+    padding: 0 1rem;
+  }
 }

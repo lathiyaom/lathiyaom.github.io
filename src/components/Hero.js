@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <h1 className="hero-title">
-            I prevent backend failures that destroy startup growth
+            I prevent backend failures that cost you customers
           </h1>
 
           <p className="hero-subtitle">
