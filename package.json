@@ -2,12 +2,12 @@
   "name": "backend-engineer-portfolio",
   "version": "1.0.0",
   "private": true,
-
   "homepage": "https://lathiyaom.github.io",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "lucide-react": "^0.395.0"
   },
   "scripts": {
     "start": "react-scripts start",

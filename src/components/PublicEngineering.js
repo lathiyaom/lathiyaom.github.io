@@ -3,36 +3,34 @@ import React from 'react';
 const PublicEngineering = () => {
   return (
     <section className="public-engineering section">
-      <div className="container">
+      <div className="container container-narrow">
         <h2 className="section-title">Trust Signals</h2>
 
-        <div className="trust-content">
-          <div className="trust-item">
-            <h3 className="trust-experience">2.5+ years</h3>
-            <p className="trust-description">
-              designing and maintaining backend systems where reliability, data integrity, and scale matter
-            </p>
-          </div>
+        {/* Scannable trust list */}
+        <ul className="trust-list">
+          <li className="trust-point">
+            <strong>2.5+ years</strong> designing and maintaining backend systems
+            where reliability, data integrity, and scale matter
+          </li>
 
-          <div className="trust-item">
-            <h3 className="trust-systems">Public Engineering Work</h3>
-            <p className="trust-description">
-              Regularly publishing technical articles on backend architecture, failure modes, and system design on LinkedIn and Medium
-            </p>
-          </div>
+          <li className="trust-point">
+            <strong>Public engineering work</strong> — regularly publishing
+            practical articles on backend architecture, failure modes, and
+            system design on LinkedIn and Medium
+          </li>
 
-          <div className="trust-item">
-            <h3 className="trust-thinking">Systems-first mindset</h3>
-            <p className="trust-description">
-              Focused on preventing outages, race conditions, and scaling failures before they impact real users
-            </p>
-          </div>
+          <li className="trust-point">
+            <strong>Systems-first mindset</strong> focused on preventing outages,
+            race conditions, and scaling failures before they impact real users
+          </li>
+        </ul>
 
-          <div className="trust-philosophy">
-            <blockquote className="philosophy-quote">
-              "Good engineering is invisible. You only notice it when it fails — my work is to make sure it doesn’t."
-            </blockquote>
-          </div>
+        {/* Philosophy */}
+        <div className="trust-philosophy">
+          <blockquote className="philosophy-quote">
+            “Good engineering is invisible. You only notice it when it fails —
+            my work is to make sure it doesn’t.”
+          </blockquote>
         </div>
       </div>
     </section>

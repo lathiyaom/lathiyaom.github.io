@@ -147,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
   max-width: var(--container-md);
 }
 .section {
-  padding: var(--space-4xl) 0; /* More space for calm flow */
+  padding: var(--space-3xl) 0; /* More space for calm flow */
   position: relative;
 }
 .section-alt {
@@ -161,6 +161,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: var(--space-3xl);
   position: relative;
   overflow: hidden;
+
 }
 .hero::before {
   content: none; /* Removed divider for minimalism */
@@ -250,7 +251,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   gap: var(--space-lg);
   background: var(--bg-card);
-  padding: var(--space-xl);
+  padding: var(--space-md);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-light);
@@ -720,7 +721,7 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-cta); /* Solid indigo */
   color: white;
   text-align: center;
-  padding: var(--space-4xl) 0;
+  padding: var(--space-3xl) 0;
   position: relative;
   overflow: hidden;
 }
@@ -783,7 +784,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-2xl);
+  gap: var(--space-xl);
 }
 .footer-brand {
   font-size: 1.25rem;
@@ -845,6 +846,69 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid var(--border-light);
   width: 100%;
 }
+/* Contact links container - positioned at top of CTA */
+.contact-links {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  padding-top: 1rem;
+  
+}
+
+/* Contact link */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: #E5E7EB;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Icon container */
+.icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+/* Text */
+.link-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #F1F5F9;
+}
+
+/* Hover effect */
+.contact-link:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.contact-link:hover .icon-box {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
 /* ------------------ RESPONSIVE DESIGN ENHANCEMENTS ------------------ */
 @media (max-width: 1024px) {
   .section {
@@ -903,6 +967,8 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: var(--space-md);
     text-align: left;
+    margin-bottom: var(--space-md);
+    padding: var(--space-lg);
   }
   .pain-bullet {
     align-self: flex-start;
@@ -924,6 +990,7 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     align-items: center;
     gap: var(--space-lg);
+    padding: var(--space-2xl) 0 var(--space-lg);
   }
 }
 @media (max-width: 480px) {
@@ -1042,4 +1109,56 @@ h1, h2, h3, h4, h5, h6 {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ------------------ HERO CONTACT LINKS (VISIBLE & CALM) ------------------ */
+.hero .contact-links {
+  margin-top: var(--space-xl);
+  margin-bottom: 0;
+  padding-top: 0;
+
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+/* Hero-specific link style (light background) */
+.hero .contact-link {
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-full);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* Icon inside hero */
+.hero .contact-link .icon-box {
+  width: 28px;
+  height: 28px;
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+/* Text */
+.hero .contact-link .link-text {
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Hover (very subtle) */
+.hero .contact-link:hover {
+  background: var(--bg-section);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.cta-meta {
+  font-size: 0.875rem;
+  color: #CBD5E1;
+  margin-bottom: var(--space-xl);
 }
