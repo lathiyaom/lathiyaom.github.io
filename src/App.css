@@ -1,7 +1,0 @@
-/* Single consolidated CSS file handles all styling */
-@import './styles.css';
-
-/* App-specific overrides if needed */
-.App {
-  min-height: 100vh;
-}

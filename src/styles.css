@@ -4,6 +4,16 @@
    Design System: Minimalism + Engineering Precision
    ========================================================= */
 /* ------------------ ENHANCED DESIGN TOKENS ------------------ */
+
+/* ------------------ GLOBAL PAGE LAYOUT ------------------ */
+.page {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  width: 100%;
+  box-sizing: border-box;
+}
+
 :root {
   /* Calm Premium Palette: Single Indigo Anchor + Neutral Serenity */
   --brand: #1E40AF; /* Sole primary: Indigo for trust and tech depth */
@@ -46,15 +56,15 @@
   --gradient-subtle: #FAFAFA; /* Flat off-white */
   --gradient-brand: var(--brand); /* Solid indigo */
  
-  /* Amplified Spacing: Whitespace = Confidence */
+  /* Balanced Spacing: Professional density without excess */
   --space-xs: 0.5rem;
-  --space-sm: 1rem; /* Increased from 0.75rem */
-  --space-md: 1.25rem;
-  --space-lg: 2rem; /* Bumped for breathing room */
-  --space-xl: 2.5rem;
-  --space-2xl: 3.5rem;
-  --space-3xl: 4.5rem;
-  --space-4xl: 5rem; /* More generous sections */
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 2.5rem;
+  --space-3xl: 3rem;
+  --space-4xl: 3.5rem;
  
   /* Typography: Inter for Precision */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
@@ -78,11 +88,13 @@
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 body {
   font-family: var(--font-family);
@@ -92,6 +104,10 @@ body {
   background-color: var(--bg-page);
   overflow-x: hidden;
   position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
 }
 /* Clean Background: No Patterns for Serenity */
 body::before {
@@ -142,12 +158,13 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
   padding: 0 var(--space-lg);
   width: 100%;
+  box-sizing: border-box;
 }
 .container-narrow {
   max-width: var(--container-md);
 }
 .section {
-  padding: var(--space-3xl) 0; /* More space for calm flow */
+  padding: var(--space-2xl) 0;
   position: relative;
 }
 .section-alt {
@@ -157,11 +174,9 @@ h1, h2, h3, h4, h5, h6 {
 .hero {
   background: var(--bg-page); /* Flat white—no gradient */
   text-align: center;
-  padding: var(--space-4xl) 0 var(--space-3xl);
-  margin-bottom: var(--space-3xl);
+  padding: var(--space-4xl) 0 var(--space-2xl);
   position: relative;
   overflow: hidden;
-
 }
 .hero::before {
   content: none; /* Removed divider for minimalism */
@@ -373,6 +388,19 @@ h1, h2, h3, h4, h5, h6 {
 .service-result::before {
   content: "↑";
   font-weight: 700;
+}
+.step-number {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--brand);
+  opacity: 0.7;
+  background: var(--bg-card);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
 }
 /* ------------------ PROJECTS SHOWCASE ENHANCED ------------------ */
 .project-highlights {
@@ -929,6 +957,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-md);
+    box-sizing: border-box;
   }
   .section {
     padding: var(--space-2xl) 0;
@@ -996,6 +1025,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 480px) {
   .container {
     padding: 0 var(--space-sm);
+    box-sizing: border-box;
   }
   .section {
     padding: var(--space-xl) 0;
