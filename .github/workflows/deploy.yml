@@ -30,6 +30,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # 🔥 CRITICAL: CACHE-BUST CSS (FIXES SPACING ISSUE)
+      - name: Inject build version into CSS
+        run: |
+          BUILD_ID=$(date +"%Y-%m-%d-%H%M")
+          echo "/* BUILD: $BUILD_ID */" | cat - src/styles.css > temp.css
+          mv temp.css src/styles.css
+
       - name: Build project
         run: npm run build
 
