@@ -7,7 +7,7 @@ const CallToAction = () => {
         <div className="cta-content">
           <div className="cta-buttons">
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:omlathiya.dev@gmail.com"
               className="btn-primary cta-primary"
             >
               Schedule a Call
