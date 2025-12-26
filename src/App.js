@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { useLenis } from './hooks/useLenis';
 
 import Hero from './components/Hero';
 import BusinessPain from './components/BusinessPain';
@@ -10,10 +11,12 @@ import PublicEngineering from './components/PublicEngineering';
 import CallToAction from './components/CallToAction';
 
 function App() {
+  useLenis();
+
   return (
-    <div className="App">
+    <div className="min-h-screen flex flex-col relative">
       {/* Global layout wrapper */}
-      <main className="page">
+      <main className="max-w-full mx-auto p-0 w-full box-border">
         <Hero />
         <BusinessPain />
         <BackendServices />

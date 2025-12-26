@@ -1,2 +1,4 @@
-/* Global styles now handled by consolidated styles.css file */
-/* This file can be kept minimal for any additional global overrides if needed */
+/* Tailwind CSS v3 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

@@ -36,16 +36,21 @@ const BackendServices = () => {
   
 
   return (
-    <section className="backend-services section">
-      <div className="container">
-        <h2 className="section-title">How I Work</h2>
-
-        <div className="services-grid">
+    <section className="bg-white py-20 px-6 max-w-[1400px] mx-auto">
+        <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-3 relative inline-block text-gray-900 after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-[60px] after:h-[3px] after:bg-blue-800 after:rounded-full">
+         How I Work
+        </h2>
+      <div className="max-w-[1200px] mx-auto px-6">
+      
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-2">
           {workSteps.map((step, index) => (
-            <div key={index} className="service-card">
-              <div className="step-number">{step.step}</div>
-              <h3 className="service-title">{step.title}</h3>
-              <p className="service-description">{step.description}</p>
+            <div 
+              key={index} 
+              className="bg-[#FAFAFA] rounded-[14px] p-8 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100 hover:border-blue-800/20 group"
+            >
+              <div className="text-[3rem] font-bold text-blue-800/10 absolute top-4 right-4 leading-none transition-colors duration-300 group-hover:text-blue-800/20">{step.step}</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3 relative z-10">{step.title}</h3>
+              <p className="text-gray-500 leading-relaxed text-[0.95rem] relative z-10">{step.description}</p>
             </div>
           ))}
         </div>
