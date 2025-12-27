@@ -3,7 +3,7 @@ import React from "react";
 const PublicEngineering = () => {
   return (
     <section className="bg-white py-20 px-6 max-w-[1400px] mx-auto">
-      <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-3 relative inline-block text-gray-900 after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-[60px] after:h-[3px] after:bg-blue-800 after:rounded-full">
+      <h2 className=" text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-3 relative inline-block text-gray-900 after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-[60px] after:h-[3px] after:bg-blue-800 after:rounded-full">
         Trust Signals
       </h2>
       <div className="max-w-[800px] mx-auto px-6">
