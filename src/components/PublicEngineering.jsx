@@ -1,64 +1,44 @@
-import React from "react";
+import React from 'react';
+import { BookOpen, Github, GraduationCap } from 'lucide-react';
 
-const PublicEngineering = () => {
-  return (
-    <section className="bg-white py-20 px-6 max-w-[1400px] mx-auto">
-      <h2 className=" text-[clamp(2.5rem,5vw,4rem)] font-bold tracking-tight mb-3 relative inline-block text-gray-900 after:content-[''] after:absolute after:bottom-[-8px] after:left-0 after:w-[60px] after:h-[3px] after:bg-blue-800 after:rounded-full">
-        Trust Signals
+const signals = [
+  {
+    icon: <Github size={18} />,
+    title: 'Open source mindset',
+    copy: 'Code should be readable, documented, and shaped so other engineers can contribute without archaeology.',
+  },
+  {
+    icon: <BookOpen size={18} />,
+    title: 'Technical writing',
+    copy: 'I use writing to clarify architecture decisions, failure modes, and system trade-offs.',
+  },
+  {
+    icon: <GraduationCap size={18} />,
+    title: 'Learning velocity',
+    copy: 'I adapt across stacks by leaning on fundamentals: HTTP, data modeling, concurrency, deployment, and observability.',
+  },
+];
+
+const PublicEngineering = () => (
+  <section className="bg-white py-20">
+    <div className="mx-auto w-full max-w-7xl px-4">
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-700">Open Source / Writing / Learning</p>
+      <h2 className="mt-3 max-w-3xl text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+        I communicate engineering decisions clearly because delivery is a team sport.
       </h2>
-      <div className="max-w-[800px] mx-auto px-6">
-        {/* Scannable trust list */}
-        <ul className="list-none p-0 m-0 flex flex-col gap-4 mb-12">
-          <li className="bg-white rounded-[14px] p-6 border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:border-blue-800/20 hover:shadow-sm">
-            <span className="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold shrink-0">
-              ✓
-            </span>
-            <span>
-              <strong className="text-gray-900">2.5+ years</strong> designing
-              and maintaining backend systems where reliability, data integrity,
-              and scale matter
-            </span>
-          </li>
-
-          <li className="bg-white rounded-[14px] p-6 border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:border-blue-800/20 hover:shadow-sm">
-            <span className="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold shrink-0">
-              ✓
-            </span>
-            <span>
-              <strong className="text-gray-900">Public engineering work</strong>{" "}
-              — regularly publishing practical articles on backend architecture,
-              failure modes, and system design on LinkedIn and Medium
-            </span>
-          </li>
-
-          <li className="bg-white rounded-[14px] p-6 border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:border-blue-800/20 hover:shadow-sm">
-            <span className="w-8 h-8 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold shrink-0">
-              ✓
-            </span>
-            <span>
-              <strong className="text-gray-900">Systems-first mindset</strong>{" "}
-              focused on preventing outages, race conditions, and scaling
-              failures before they impact real users
-            </span>
-          </li>
-        </ul>
-
-        {/* Philosophy */}
-        <div className="text-center mt-12">
-          <blockquote className="text-xl italic text-gray-600 relative px-12 py-4">
-            <span className="absolute left-0 top-0 text-5xl text-blue-800/20 font-serif leading-none">
-              "
-            </span>
-            Good engineering is invisible. You only notice it when it fails — my
-            work is to make sure it doesn't.
-            <span className="absolute right-0 bottom-0 text-5xl text-blue-800/20 font-serif leading-none">
-              "
-            </span>
-          </blockquote>
-        </div>
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
+        {signals.map((signal) => (
+          <article key={signal.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-emerald-700 shadow-sm">
+              {signal.icon}
+            </div>
+            <h3 className="mt-5 text-lg font-bold text-slate-950">{signal.title}</h3>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{signal.copy}</p>
+          </article>
+        ))}
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default PublicEngineering;
