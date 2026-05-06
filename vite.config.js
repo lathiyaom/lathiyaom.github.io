@@ -4,7 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [react()],
-    base: '/Portfolio/', // Set base to /<repo_name>/ for GitHub Pages project site
+    base: './', // Relative assets work on both /Portfolio/ project pages and root Pages deployments.
     build: {
         outDir: 'dist', // Standard Vite output directory
         emptyOutDir: true,
