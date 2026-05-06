@@ -3,7 +3,7 @@ name: Deploy React Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - migrate/cra-to-vite   # 👈 your migration branch
 
 permissions:
   contents: read
@@ -26,16 +26,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
-
-      # 🔥 CRITICAL: CACHE-BUST CSS (FIXES SPACING ISSUE)
-      - name: Inject build version into CSS
-        run: |
-          BUILD_ID=$(date +"%Y-%m-%d-%H%M")
-          echo "/* BUILD: $BUILD_ID */" | cat - src/styles.css > temp.css
-          mv temp.css src/styles.css
+        run: npm ci
 
       - name: Build project
         run: npm run build
@@ -43,7 +37,7 @@ jobs:
       - name: Upload build files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: dist   # 🔥 VITE OUTPUT
 
   deploy:
     needs: build
