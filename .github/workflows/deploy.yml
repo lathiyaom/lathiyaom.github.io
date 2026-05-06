@@ -3,7 +3,9 @@ name: Deploy React Portfolio to GitHub Pages
 on:
   push:
     branches:
-      - migrate/cra-to-vite   # 👈 your migration branch
+      - main
+      - migrate/cra-to-vite
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -11,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
@@ -25,8 +27,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
-          cache: 'npm'
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
@@ -34,10 +36,13 @@ jobs:
       - name: Build project
         run: npm run build
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Upload build files
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist   # 🔥 VITE OUTPUT
+          path: dist
 
   deploy:
     needs: build
