@@ -2,7 +2,7 @@
 
 This repository contains the source code for my personal backend engineering portfolio, built as a single-page React application and deployed with GitHub Pages.
 
-Live site: https://lathiyaom.github.io/Portfolio/
+Live site: https://lathiyaom.github.io/
 
 ## Purpose
 
